@@ -1,5 +1,4 @@
-MXMLC = /Applications/Flixel/flex_sdk_4.1.0.16076/bin/mxmlc
-FLIXEL = /Applications/Flixel/AdamAtomic-flixel-b9fe564/
+include ./paths
 SRC = *.as
 MAIN = HelloWorld.as
 SWF = Game.swf
