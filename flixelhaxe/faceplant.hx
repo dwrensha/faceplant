@@ -1,6 +1,6 @@
 import org.flixel.*;
 
-class faceplant extends FlxGame
+class Faceplant extends FlxGame
 {
           public function faceplant()
           {
