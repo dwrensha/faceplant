@@ -1,4 +1,4 @@
-import org.flixel.*;
+import org.flixel.FlxGame;
 
 class Faceplant extends FlxGame
 {

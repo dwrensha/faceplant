@@ -1,3 +1,5 @@
+-cp /Users/davidrenshaw/Games/AdamAtomic-flixel-beta
 -swf9 game.swf
--main faceplant
+-main Faceplant
 -swf-header 600:600:40:0000FF
+
