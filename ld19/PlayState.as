@@ -31,13 +31,13 @@ package
 		    add(t);
                     
 
-                    _student  = new Student(100,480 - 32);
+                    _student  = new Student(100,2 * (480 - 32));
                     add(_student);
 
                     // scrolling?
 		    FlxG.follow(_student,2.5);
 		    FlxG.followAdjust(0.5,0.0);
-		    FlxG.followBounds(0,0,640,480);
+		    FlxG.followBounds(0,0,640*2,480*2);
 
 		    _objects = new FlxGroup();
                     _objects.add(_student);
@@ -52,9 +52,9 @@ package
 
                     super.update();
 
-//			FlxU.collide(_objects,_objects);
+	            collide();
 
-                    if(FlxG.keys.justPressed("SPACE")){
+                    if(FlxG.keys.justPressed("W")){
                         FlxG.state = new VictoryState();
                     }
                     

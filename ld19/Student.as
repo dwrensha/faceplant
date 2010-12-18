@@ -5,10 +5,12 @@ package
     public class Student extends FlxSprite
     {
 	[Embed(source="assets/student.png")] private var ImgStudent:Class;
+	[Embed(source="assets/jump.mp3")] private var SndJump:Class;
+	[Embed(source="assets/land.mp3")] private var SndLand:Class;
 	
 	private var _up:Boolean;
 	private var _down:Boolean;
-        
+        private var _jumpPower: int;
 
 
 	
@@ -26,9 +28,9 @@ package
 	    var runSpeed:uint = 80;
 	    drag.x = runSpeed * 3;
 //	    acceleration.y = 420;
-	  //  _jumpPower = 200;
+	    _jumpPower = 200;
 	    maxVelocity.x = runSpeed;
-	//    maxVelocity.y = _jumpPower;
+	    maxVelocity.y = _jumpPower;
 
 
 	    addAnimation("stand", [0]);
@@ -59,12 +61,12 @@ package
 		facing = RIGHT;
 		acceleration.x += drag.x;
 	    }
-/*	    if(FlxG.keys.justPressed("X") && !velocity.y)
+	    if(FlxG.keys.justPressed("SPACE") && velocity.y == 0)
 	    {
 		velocity.y = -_jumpPower;
 		FlxG.play(SndJump);
 	    }
-*/
+
             super.update();
 	}
 		
