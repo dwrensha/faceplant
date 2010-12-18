@@ -4,7 +4,7 @@ package
 
 	public class PlayState extends FlxState
 	{
-
+		[Embed(source="assets/verdant_tiles.png")] private var ImgVerdant:Class;
 
 
 		override public function create():void
