@@ -28,7 +28,7 @@ package
 	    //basic player physics
 	    var runSpeed:uint = 80;
 	    drag.x = runSpeed * 3;
-	    acceleration.y = 200;
+	    acceleration.y = 300;
 	    _jumpPower = 200;
 	    maxVelocity.x = runSpeed;
 	    maxVelocity.y = _jumpPower;
