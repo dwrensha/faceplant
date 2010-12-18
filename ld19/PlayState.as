@@ -38,7 +38,7 @@ package
 		    add(t);
                     
                     var door : Door;
-                    door = new Door(6 * 16, 5 * 16);
+                    door = new Door(77 * 16, 58 * 16);
                     add(door);
 
                     _student  = new Student(4 * 16, 5 * 16);

@@ -36,12 +36,11 @@ package
 
                     var t:FlxText;
     
-		    t = new FlxText(20,20,100,"YOU ARE NOW PLAYING");
+		    t = new FlxText(20,20,200,"YOU ARE STILL PLAYING");
 		    t.alignment = "center";
 		    add(t);
                     
-
-                    _student  = new Student(100,2 * (480 - 128));
+                    _student  = new Student(4 * 16, 5 * 16);
                     add(_student);
 
                     // scrolling?
