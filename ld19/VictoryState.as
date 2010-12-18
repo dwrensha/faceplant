@@ -2,10 +2,10 @@ package
 {
 	import org.flixel.*;
 
-	public class PlayState extends FlxState
+	public class VictoryState extends FlxState
 	{
-		[Embed(source="assets/verdant_tiles.png")] private var ImgVerdant:Class;
 
+		[Embed(source="assets/victory.mp3")] private var SndVictory:Class;
 
 		override public function create():void
 		{
@@ -13,10 +13,12 @@ package
                      
                     var t:FlxText;
     
-		    t = new FlxText(20,20,100,"YOU ARE NOW PLAYING");
+		    t = new FlxText(100,20,200,"YOU ARE VICTORIOUS");
 		    t.alignment = "center";
 		    add(t);
                     
+                    FlxG.playMusic(SndVictory);
+
                     return;
 
 		}
@@ -27,9 +29,9 @@ package
                     super.update();
 
                     if(FlxG.keys.justPressed("SPACE")){
-                        FlxG.state = new VictoryState();
+                        FlxG.state = new PlayState();
                     }
-                    
+                   
                     return;
 		}
 	}
