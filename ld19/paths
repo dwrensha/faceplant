@@ -1,0 +1,3 @@
+MXMLC = /Applications/flex_sdk_4.0.0.14159_mpl/bin/mxmlc
+# FLIXEL = /Users/davidrenshaw/Games/AdamAtomic-flixel-b9/
+FLIXEL = /Users/davidrenshaw/Games/AdamAtomic-flixel-beta/
