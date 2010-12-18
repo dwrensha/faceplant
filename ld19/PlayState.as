@@ -7,6 +7,7 @@ package
 		[Embed(source="assets/verdant_tiles.png")] private var ImgVerdant:Class;
 		[Embed(source="assets/autotiles.png")] private var ImgTiles:Class;
 		[Embed(source="assets/map.png")] private var ImgMap:Class;
+		[Embed(source="assets/background.png")] private var ImgBackground:Class;
 
 
 		protected var _objects:FlxGroup;
@@ -17,6 +18,12 @@ package
 
                     FlxState.bgColor = 0xffaabbdd;
                      
+                    var bg: FlxSprite;
+                    bg = new FlxSprite();
+                    bg.loadGraphic(ImgBackground);
+                    bg.scale = new FlxPoint(6,6);
+                    add(bg);
+                    
 
 		    var tiles:FlxTilemap = new FlxTilemap();
 		    tiles.auto = FlxTilemap.AUTO;
@@ -31,7 +38,7 @@ package
 		    add(t);
                     
 
-                    _student  = new Student(100,2 * (480 - 128));
+                    _student  = new Student(5 * 16, 6 * 16);
                     add(_student);
 
                     // scrolling?

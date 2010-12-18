@@ -7,7 +7,9 @@ package
 		[Embed(source="assets/verdant_tiles.png")] private var ImgVerdant:Class;
 		[Embed(source="assets/autotiles1.png")] private var ImgTiles:Class;
 		[Embed(source="assets/map1.png")] private var ImgMap:Class;
+		[Embed(source="assets/background1.png")] private var ImgBackground:Class;
 		[Embed(source="assets/spooky.mp3")] private var SndSpooky:Class;
+
 
 
 		protected var _objects:FlxGroup;
@@ -18,6 +20,12 @@ package
 
                     FlxState.bgColor = 0xff305040;
                      
+                    var bg: FlxSprite;
+                    bg = new FlxSprite();
+                    bg.loadGraphic(ImgBackground);
+                    bg.scale = new FlxPoint(6,6);
+                    add(bg);
+
                     FlxG.playMusic(SndSpooky);
 
 		    var tiles:FlxTilemap = new FlxTilemap();

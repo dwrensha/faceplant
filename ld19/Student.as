@@ -23,7 +23,6 @@ package
             height = 16;
 
 
-            
 
 	    //basic player physics
 	    var runSpeed:uint = 80;
