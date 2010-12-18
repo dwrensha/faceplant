@@ -19,6 +19,8 @@ package
                     
                     FlxG.playMusic(SndTitle);
 
+                    FlxG.mouse.hide();
+
                     return;
 
 		}
