@@ -18,7 +18,6 @@ package
 		    add(t);
                     
                     FlxG.playMusic(SndVictory);
-
                     return;
 
 		}

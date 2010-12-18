@@ -2,11 +2,12 @@ package
 {
 	import org.flixel.*;
 
-	public class PlayState extends FlxState
+	public class PlayState1 extends FlxState
 	{
 		[Embed(source="assets/verdant_tiles.png")] private var ImgVerdant:Class;
-		[Embed(source="assets/autotiles.png")] private var ImgTiles:Class;
-		[Embed(source="assets/map.png")] private var ImgMap:Class;
+		[Embed(source="assets/autotiles1.png")] private var ImgTiles:Class;
+		[Embed(source="assets/map1.png")] private var ImgMap:Class;
+		[Embed(source="assets/spooky.mp3")] private var SndSpooky:Class;
 
 
 		protected var _objects:FlxGroup;
@@ -15,8 +16,9 @@ package
 		override public function create():void
 		{
 
-                    FlxState.bgColor = 0xffaabbdd;
+                    FlxState.bgColor = 0xff305040;
                      
+                    FlxG.playMusic(SndSpooky);
 
 		    var tiles:FlxTilemap = new FlxTilemap();
 		    tiles.auto = FlxTilemap.AUTO;
@@ -55,7 +57,7 @@ package
 	            collide();
 
                     if(FlxG.keys.justPressed("W")){
-                        FlxG.state = new PlayState1();
+                        FlxG.state = new VictoryState();
                     }
                     
 
