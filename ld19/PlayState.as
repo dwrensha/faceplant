@@ -37,8 +37,11 @@ package
 		    t.alignment = "center";
 		    add(t);
                     
+                    var door : Door;
+                    door = new Door(6 * 16, 5 * 16);
+                    add(door);
 
-                    _student  = new Student(5 * 16, 6 * 16);
+                    _student  = new Student(4 * 16, 5 * 16);
                     add(_student);
 
                     // scrolling?
