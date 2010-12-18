@@ -68,8 +68,12 @@ package
 	    {
 		velocity.y = -_jumpPower;
 		FlxG.play(SndJump);
-                _onFloor = false;
+
 	    }
+
+            if (velocity.y != 0) {
+                _onFloor = false;
+            }
 
             super.update();
 	}
