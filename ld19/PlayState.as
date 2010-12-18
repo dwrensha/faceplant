@@ -12,6 +12,8 @@ package
 
 		protected var _objects:FlxGroup;
 		protected var _student:Student;
+                protected var _exit:Door;
+
 
 		override public function create():void
 		{
@@ -37,9 +39,9 @@ package
 		    t.alignment = "center";
 		    add(t);
                     
-                    var door : Door;
-                    door = new Door(77 * 16, 58 * 16);
-                    add(door);
+
+                    _exit = new Door(77 * 16, 58 * 16);
+                    add(_exit);
 
                     _student  = new Student(4 * 16, 5 * 16);
                     add(_student);
@@ -64,8 +66,10 @@ package
 
 	            collide();
 
-                    if(FlxG.keys.justPressed("W")){
-                        FlxG.state = new PlayState1();
+                    if(FlxG.keys.justPressed("UP")){
+                        if(_student.overlaps(_exit)){
+                            FlxG.state = new PlayState1();
+                        }
                     }
                     
 
