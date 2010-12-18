@@ -15,6 +15,7 @@ package
             width = 8;
             height = 16;
 
+            solid = false;
 
 	}
 		
