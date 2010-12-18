@@ -5,6 +5,7 @@ package
 	public class LogoState extends FlxState
 	{
 		[Embed(source="assets/dwarf.png")] private var ImgDwarf:Class;
+		[Embed(source="assets/cursor.png")] private var ImgCursor:Class;
 		[Embed(source="assets/logo.mp3")] private var SndDwarf:Class;
 
                 private var _s:FlxSprite;
@@ -19,6 +20,7 @@ package
                         add(_s);
                         FlxG.play(SndDwarf);
                         
+			FlxG.mouse.show(ImgCursor);
 
                         return;
 
@@ -28,7 +30,7 @@ package
 		{
                     super.update();
 
-                    if(FlxG.keys.justPressed("SPACE")){
+                    if(FlxG.mouse.justPressed() ){
                         FlxG.state = new MenuState();
                     }
 
