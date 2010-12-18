@@ -8,8 +8,8 @@ package
 	[Embed(source="assets/jump.mp3")] private var SndJump:Class;
 	[Embed(source="assets/land.mp3")] private var SndLand:Class;
 	
-	private var _up:Boolean;
-	private var _down:Boolean;
+
+        private var _onFloor: Boolean;
         private var _jumpPower: int;
 
 
@@ -23,6 +23,7 @@ package
             height = 16;
 
 
+            
 
 	    //basic player physics
 	    var runSpeed:uint = 80;
@@ -32,6 +33,8 @@ package
 	    maxVelocity.x = runSpeed;
 	    maxVelocity.y = _jumpPower;
 
+
+            _onFloor = true;
 
 	    addAnimation("stand", [0]);
 	    addAnimation("walk", [1,2], 5);
@@ -61,10 +64,11 @@ package
 		facing = RIGHT;
 		acceleration.x += drag.x;
 	    }
-	    if(FlxG.keys.justPressed("SPACE") && velocity.y == 0)
+	    if(FlxG.keys.justPressed("SPACE") && _onFloor)
 	    {
 		velocity.y = -_jumpPower;
 		FlxG.play(SndJump);
+                _onFloor = false;
 	    }
 
             super.update();
@@ -72,6 +76,9 @@ package
 		
 	override public function hitBottom(Contact:FlxObject,Velocity:Number):void
 	{
+            if(velocity.y > 50)
+	    FlxG.play(SndLand);
+	    _onFloor = true;
 	    return super.hitBottom(Contact,Velocity);
 	}
 		
