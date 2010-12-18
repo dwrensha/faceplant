@@ -2,7 +2,7 @@ package
 {
 	import org.flixel.*;
 
-	public class MenuState extends FlxState
+	public class PlayState extends FlxState
 	{
 
 
@@ -13,7 +13,7 @@ package
                      
                     var t:FlxText;
     
-		    t = new FlxText(20,20,50,"space to continue");
+		    t = new FlxText(20,20,50,"YOU ARE NOW PLAYING");
 		    t.alignment = "center";
 		    add(t);
                     
@@ -24,12 +24,7 @@ package
 		override public function update():void
 		{
 
-                    super.update();
-
-                    if(FlxG.keys.justPressed("SPACE")){
-                        FlxG.state = new PlayState();
-                    }
-                   
+                    
                     return;
 		}
 	}
