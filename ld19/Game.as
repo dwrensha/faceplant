@@ -10,7 +10,7 @@ package {
 	{
 		public function Game():void
 		{
-			super(640,480,LogoState);
+			super(320,240,LogoState);
 			FlxState.bgColor = 0xff010100;
 			useDefaultHotKeys = true;
 		}

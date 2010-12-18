@@ -13,7 +13,7 @@ package
                      
                     var t:FlxText;
     
-		    t = new FlxText(20,20,50,"space to continue");
+		    t = new FlxText(20,20,100,"space to continue");
 		    t.alignment = "center";
 		    add(t);
                     

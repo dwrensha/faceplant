@@ -13,7 +13,7 @@ package
                      
                     var t:FlxText;
     
-		    t = new FlxText(20,20,50,"YOU ARE NOW PLAYING");
+		    t = new FlxText(20,20,100,"YOU ARE NOW PLAYING");
 		    t.alignment = "center";
 		    add(t);
                     
