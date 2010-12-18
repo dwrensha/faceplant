@@ -5,7 +5,7 @@ package
 	public class MenuState extends FlxState
 	{
 
-
+		[Embed(source="assets/title.mp3")] private var SndTitle:Class;
 
 		override public function create():void
 		{
@@ -17,6 +17,8 @@ package
 		    t.alignment = "center";
 		    add(t);
                     
+                    FlxG.playMusic(SndTitle);
+
                     return;
 
 		}

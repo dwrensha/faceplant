@@ -18,6 +18,7 @@ package
                         _s = new FlxSprite(100,0);
 			_s.loadGraphic(ImgDwarf);
                         add(_s);
+
                         FlxG.play(SndDwarf);
                         
 			FlxG.mouse.show(ImgCursor);
