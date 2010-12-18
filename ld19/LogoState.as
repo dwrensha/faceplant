@@ -14,6 +14,8 @@ package
 		override public function create():void
 		{
 
+                    
+                        _s = new FlxSprite(100,0);
 			_s.loadGraphic(ImgDwarf);
                         add(_s)
 
