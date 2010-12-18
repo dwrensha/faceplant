@@ -4,7 +4,7 @@ package {
 	import LogoState;
 	
 	[SWF(width="640", height="480", backgroundColor="#000000")]
-//	[Frame(factoryClass="Preloader")]
+	[Frame(factoryClass="Preloader")]
 
 	public class Game extends FlxGame
 	{
