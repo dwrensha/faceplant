@@ -38,6 +38,7 @@ package
 
 	    addAnimation("stand", [0]);
 	    addAnimation("walk", [1,2], 5);
+	    addAnimation("jump", [3,4,5,4], 4);
             
 
 	}
@@ -45,11 +46,16 @@ package
 	override public function update():void
 	{
     
-            if(velocity.x == 0){
-                play("stand");
-            }
-            else {
-                play("walk");
+            if(_onFloor){
+                if(velocity.x == 0){
+                    play("stand");
+                }
+                else {
+                    play("walk");
+                
+                }
+            }else {
+                play("jump");
             }
 
 
