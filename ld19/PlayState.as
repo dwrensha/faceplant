@@ -17,6 +17,11 @@ package
 		    t.alignment = "center";
 		    add(t);
                     
+
+                    var s:Student;
+                    s = new Student(100,100);
+                    add(s);
+
                     return;
 
 		}
