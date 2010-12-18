@@ -20,10 +20,21 @@ package
             width = 8;
             height = 16;
 
+
+
+	    //basic player physics
+	    var runSpeed:uint = 80;
+	    drag.x = runSpeed * 3;
+//	    acceleration.y = 420;
+	  //  _jumpPower = 200;
+	    maxVelocity.x = runSpeed;
+	//    maxVelocity.y = _jumpPower;
+
+
 	    addAnimation("stand", [0]);
 	    addAnimation("walk", [1,2], 5);
             
-//            play("stand");
+
 	}
 		
 	override public function update():void
@@ -36,17 +47,24 @@ package
                 play("walk");
             }
 
-            if(FlxG.keys.justPressed("RIGHT")){
-                velocity.x = velocity.x + 3;
-                facing = RIGHT;
-            }
 
-            if(FlxG.keys.justPressed("LEFT")){
-                velocity.x = velocity.x - 3;
-                facing = LEFT;
-            }
-
-
+	    acceleration.x = 0;
+	    if(FlxG.keys.LEFT)
+	    {
+		facing = LEFT;
+		acceleration.x -= drag.x;
+	    }
+	    else if(FlxG.keys.RIGHT)
+	    {
+		facing = RIGHT;
+		acceleration.x += drag.x;
+	    }
+/*	    if(FlxG.keys.justPressed("X") && !velocity.y)
+	    {
+		velocity.y = -_jumpPower;
+		FlxG.play(SndJump);
+	    }
+*/
             super.update();
 	}
 		

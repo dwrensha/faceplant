@@ -31,13 +31,13 @@ package
 		    add(t);
                     
 
-                    _student  = new Student(100,100);
+                    _student  = new Student(100,480 - 32);
                     add(_student);
 
                     // scrolling?
 		    FlxG.follow(_student,2.5);
 		    FlxG.followAdjust(0.5,0.0);
-		    FlxG.followBounds(0,0,640,640);
+		    FlxG.followBounds(0,0,640,480);
 
 		    _objects = new FlxGroup();
                     _objects.add(_student);
@@ -57,6 +57,9 @@ package
                     if(FlxG.keys.justPressed("SPACE")){
                         FlxG.state = new VictoryState();
                     }
+                    
+
+                    
                     
                     return;
 		}
