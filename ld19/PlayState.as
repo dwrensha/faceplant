@@ -5,6 +5,8 @@ package
 	public class PlayState extends FlxState
 	{
 		[Embed(source="assets/verdant_tiles.png")] private var ImgVerdant:Class;
+		[Embed(source="assets/autotiles.png")] private var ImgTiles:Class;
+		[Embed(source="assets/map.png")] private var ImgMap:Class;
 
 
 		protected var _objects:FlxGroup;
@@ -13,7 +15,15 @@ package
 		override public function create():void
 		{
 
+                    FlxState.bgColor = 0xffaabbdd;
                      
+
+		    var tiles:FlxTilemap = new FlxTilemap();
+		    tiles.auto = FlxTilemap.AUTO;
+		    tiles.loadMap(FlxTilemap.imageToCSV(ImgMap,false,2),ImgTiles);
+		    tiles.follow();
+		    add(tiles);
+
                     var t:FlxText;
     
 		    t = new FlxText(20,20,100,"YOU ARE NOW PLAYING");

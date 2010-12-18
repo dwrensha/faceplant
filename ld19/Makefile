@@ -1,5 +1,5 @@
 include ./paths
-SRC = ./*.as
+SRC = ./*.as ./assets/*
 MAIN = Game.as
 SWF = Game.swf
  
