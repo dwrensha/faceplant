@@ -13,6 +13,7 @@ package
 		protected var _objects:FlxGroup;
 		protected var _student:Student;
                 protected var _exit:Door;
+                protected var _entrance:Door;
                 protected var _key: Key;
                 protected var _lock: Lock;
 
@@ -46,6 +47,9 @@ package
 
                     _exit = new Door(77 * 16, 58 * 16);
                     add(_exit);
+
+                    _entrance = new Door(4 * 16 , 5 * 16);
+                    add(_entrance);
 
                     _key = new Key(9 * 16, 5 * 16 + 8);
 //                    _key = new Key(5 * 16, 5 * 16 + 8);
