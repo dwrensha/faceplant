@@ -47,8 +47,8 @@ package
                     _exit = new Door(77 * 16, 58 * 16);
                     add(_exit);
 
-//                    _key = new Key(9 * 16, 5 * 16 + 8);
-                    _key = new Key(5 * 16, 5 * 16 + 8);
+                    _key = new Key(9 * 16, 5 * 16 + 8);
+//                    _key = new Key(5 * 16, 5 * 16 + 8);
                     add(_key);
 
                     
