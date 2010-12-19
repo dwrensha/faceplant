@@ -15,6 +15,8 @@ package
 		protected var _student:Student;
                 protected var _exit:Door;
                 protected var _entrance:Door;
+                protected var _key: Key;
+                protected var _lock: Lock;
 
 		override public function create():void
 		{
@@ -47,6 +49,13 @@ package
 
                     _entrance = new Door(4 * 16 , 5 * 16);
                     add(_entrance);
+
+
+                    _key = new Key(16 * 16, 5 * 16 + 8);
+                    add(_key);
+
+                    _lock = new Lock(72 * 16, 58 * 16 );
+                    add(_lock);
 
                     _student  = new Student(4 * 16, 5 * 16);
                     add(_student);

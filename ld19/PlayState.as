@@ -84,11 +84,9 @@ package
                             FlxG.state = new PlayState1();
                         }
  
-//                        if(_student.overlaps(_key)){
-//                            _holdingKey = true;
-//                            _key.collect();
-//                        }
+
                    }
+
                     
                     
                     return;

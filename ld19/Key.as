@@ -5,7 +5,6 @@ package
     public class Key extends FlxSprite
     {
 	[Embed(source="assets/key.png")] private var ImgKey:Class;
-	[Embed(source="assets/coin.mp3")] private var SndKey:Class;
 
 	
 	public function Key(X:int,Y:int)
@@ -34,7 +33,6 @@ package
         public function collect() : void
         {
             exists = false;
-            FlxG.play(SndKey);
         }
 
     }
