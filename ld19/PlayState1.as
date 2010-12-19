@@ -29,6 +29,8 @@ package
                     bg = new FlxSprite();
                     bg.loadGraphic(ImgBackground);
                     bg.scale = new FlxPoint(6,6);
+                    bg.solid = false;
+                    bg.fixed = true;
                     add(bg);
 
                     FlxG.playMusic(SndSpooky);

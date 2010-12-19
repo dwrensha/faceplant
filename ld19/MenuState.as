@@ -25,6 +25,8 @@ package
                     bg = new FlxSprite();
                     bg.loadGraphic(ImgBackground);
                     bg.scale = new FlxPoint(1,1);
+                    bg.solid = false;
+                    bg.fixed = true;
                     add(bg);
 
 
