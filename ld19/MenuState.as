@@ -73,9 +73,9 @@ package
                     cat = new Cat(2*16, 13*16 + 8);
                     add(cat);
 
-                    var d : Dollars;
-                    d = new Dollars(7 * 16, 13 * 16 + 8);
-                    add(d);
+                    var b : BakedGoods;
+                    b = new BakedGoods(1 * 16, 13 * 16 + 8);
+                    add(b);
 
                     // scrolling?
 		    FlxG.follow(_student,2.5);

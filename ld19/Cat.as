@@ -80,7 +80,7 @@ package
 
         public function makeDecision():void
         {
-            decision = Math.random();
+            decision = FlxU.random();
             if (decision<= .2)
             {
                 velocity.x = 0;
