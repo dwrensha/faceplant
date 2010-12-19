@@ -139,6 +139,13 @@ package
                     add(d);
 
 
+                    var p : Publication;
+
+                    p = new Publication(8 * 16, 14 * 16 + 8);
+                    add(p);
+                    p = new Publication(9 * 16, 14 * 16 + 8);
+                    add(p);
+
 
                 }
 
