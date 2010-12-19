@@ -9,6 +9,8 @@ package
                 [Embed(source="assets/victorytiles.png")] private var ImgTiles:Class;
 		[Embed(source="assets/menumap.png")] private var ImgMap:Class;
 
+		[Embed(source="assets/starrysky.png")] private var ImgBackground:Class;
+
                 protected var _objects:FlxGroup;
 		protected var _student:Student;
                 protected var _exit: Door;
@@ -19,6 +21,12 @@ package
 
                     FlxState.bgColor = 0xff102010;
                      
+                    var bg: FlxSprite;
+                    bg = new FlxSprite();
+                    bg.loadGraphic(ImgBackground);
+                    bg.scale = new FlxPoint(1,1);
+                    add(bg);
+
 
 		    var tiles:FlxTilemap = new FlxTilemap();
 		    tiles.auto = FlxTilemap.AUTO;
@@ -28,7 +36,7 @@ package
 
 
                     var t:FlxText;
-    		    t = new FlxText(40,40,200,"Or Perish");
+    		    t = new FlxText(50,40,200,"Or Perish");
 		    t.alignment = "center";
                     t.scale = new FlxPoint(5,5);
                     t.color = 0xffff0000;
@@ -36,7 +44,7 @@ package
                     
 
                     var t1:FlxText;
-                    t1 = new FlxText(50,140,200, "by David Renshaw");
+                    t1 = new FlxText(60,140,200, "by David Renshaw");
                     t1.alignment = "center";
                     t1.color = 0xffff0000;
 		    add(t1);
