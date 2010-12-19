@@ -13,6 +13,10 @@ package
 		protected var _objects:FlxGroup;
 		protected var _student:Student;
                 protected var _exit:Door;
+                protected var _key: Key;
+                protected var _lock: Lock;
+
+
 
 
 		override public function create():void
@@ -43,13 +47,14 @@ package
                     _exit = new Door(77 * 16, 58 * 16);
                     add(_exit);
 
-                    var k: Key;
-                    k = new Key(9 * 16, 5 * 16 + 8);
-                    add(k);
+//                    _key = new Key(9 * 16, 5 * 16 + 8);
+                    _key = new Key(5 * 16, 5 * 16 + 8);
+                    add(_key);
 
-                    var lock: Lock;
-                    lock = new Lock(72 * 16, 58 * 16 );
-                    add(lock);
+                    
+
+                    _lock = new Lock(72 * 16, 58 * 16 );
+                    add(_lock);
 
                     _student  = new Student(4 * 16, 5 * 16);
                     add(_student);
@@ -78,9 +83,12 @@ package
                         if(_student.overlaps(_exit)){
                             FlxG.state = new PlayState1();
                         }
-                    }
-                    
-
+ 
+//                        if(_student.overlaps(_key)){
+//                            _holdingKey = true;
+//                            _key.collect();
+//                        }
+                   }
                     
                     
                     return;

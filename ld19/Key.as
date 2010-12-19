@@ -26,6 +26,16 @@ package
             super.update();
 	}
 		
+	override public function hitSide(Contact:FlxObject,Velocity:Number):void { collect(); }
+	override public function hitBottom(Contact:FlxObject,Velocity:Number):void { collect(); }
+	override public function hitTop(Contact:FlxObject,Velocity:Number):void { collect(); }
+
     
+        public function collect() : void
+        {
+            exists = false;
+            FlxG.play(SndKey);
+        }
+
     }
 }

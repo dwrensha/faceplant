@@ -7,11 +7,12 @@ package
 	[Embed(source="assets/student.png")] private var ImgStudent:Class;
 	[Embed(source="assets/jump.mp3")] private var SndJump:Class;
 	[Embed(source="assets/land.mp3")] private var SndLand:Class;
+	[Embed(source="assets/headhit.mp3")] private var SndHead:Class;
 	
 
         private var _onFloor: Boolean;
         private var _jumpPower: int;
-
+        private var _hasKey : Boolean;
 
 	
 	public function Student(X:int,Y:int)
@@ -22,7 +23,7 @@ package
             width = 8;
             height = 16;
 
-
+            _hasKey = false;
 
 	    //basic player physics
 	    var runSpeed:uint = 80;
@@ -85,12 +86,34 @@ package
 		
 	override public function hitBottom(Contact:FlxObject,Velocity:Number):void
 	{
+            pickupKey(Contact);
             if(velocity.y > 50)
 	    FlxG.play(SndLand);
 	    _onFloor = true;
 	    return super.hitBottom(Contact,Velocity);
 	}
-		
+	
+	override public function hitSide(Contact:FlxObject,Velocity:Number):void {         
+            pickupKey(Contact);
+            return super.hitSide(Contact,Velocity);
+        }
+
+	override public function hitTop(Contact:FlxObject,Velocity:Number):void 
+        {     
+
+	    FlxG.play(SndHead);
+            pickupKey(Contact); 
+            return super.hitTop(Contact,Velocity);
+        }
+
+	
+        public function pickupKey(Contact:FlxObject):void
+        {
+            if(Contact is Key){
+                _hasKey = true;
+            }
+        }
+
     
     }
 }
