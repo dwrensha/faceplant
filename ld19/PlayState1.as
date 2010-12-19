@@ -82,6 +82,8 @@ package
                     cat = new Cat(49*16, 35*16 + 8);
                     add(cat);
 
+                    populate();
+
                     // scrolling?
 		    FlxG.follow(_student,2.5);
 		    FlxG.followAdjust(0.5,0.0);
@@ -113,5 +115,25 @@ package
                    
                     return;
 		}
+
+                private function populate():void
+                {
+                    var b : BakedGoods;
+                    b = new BakedGoods(4*16, 24 * 16 + 8);
+                    add(b);
+
+                    var d : Dollars;
+
+                    d = new Dollars(62*16, 31 * 16 + 8);
+                    add(d);
+
+
+
+
+                }
+
+
+
+
 	}
 }

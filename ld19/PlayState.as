@@ -77,6 +77,8 @@ package
                     _student  = new Student(4 * 16, 5 * 16);
                     add(_student);
 
+                    populate();
+
                     // scrolling?
 		    FlxG.follow(_student,2.5);
 		    FlxG.followAdjust(0.5,0.0);
@@ -113,5 +115,34 @@ package
                     
                     return;
 		}
+
+
+
+                private function populate():void
+                {
+                    var b : BakedGoods;
+                    b = new BakedGoods(5*16, 11 * 16 + 8);
+                    add(b);
+
+                    var d : Dollars;
+
+                    d = new Dollars(5*16, 43 * 16 + 8);
+                    add(d);
+
+                    d = new Dollars(5*16 + 8, 43 * 16 + 8);
+                    add(d);
+
+                    d = new Dollars(6*16 , 43 * 16 + 8);
+                    add(d);
+
+
+                    d = new Dollars(52*16, 46 * 16 + 8);
+                    add(d);
+
+                    d = new Dollars(52*16 + 8, 46 * 16 + 8);
+                    add(d);
+
+
+                }
 	}
 }
