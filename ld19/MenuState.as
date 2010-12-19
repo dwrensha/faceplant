@@ -54,8 +54,12 @@ package
                     _exit = new Door(19 * 16 + 8, 13 * 16);
                     add(_exit);
 
-                    _student  = new Student(2 * 16, 13 * 16);
+                    _student  = new Student(5 * 16, 13 * 16);
                     add(_student);
+
+                    var cat : Cat;
+                    cat = new Cat(2*16, 13*16 + 8);
+                    add(cat);
 
                     // scrolling?
 		    FlxG.follow(_student,2.5);

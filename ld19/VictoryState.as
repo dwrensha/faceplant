@@ -50,6 +50,14 @@ package
                     _student  = new Student(17 * 16, 117 * 16);
                     add(_student);
 
+
+                    var cat : Cat;
+                    cat = new Cat(6*16, 96*16 + 8);
+                    add(cat);
+
+                    cat = new Cat(9*16, 96*16 + 8);
+                    add(cat);
+
                     // scrolling?
 		    FlxG.follow(_student,2.5);
 		    FlxG.followAdjust(0.5,0.5);
