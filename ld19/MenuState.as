@@ -26,12 +26,20 @@ package
 		    tiles.follow();
 		    add(tiles);
 
+
                     var t:FlxText;
-    
-		    t = new FlxText(20,20,200,"welcome");
+    		    t = new FlxText(40,40,200,"Or Perish");
 		    t.alignment = "center";
+                    t.scale = new FlxPoint(5,5);
+                    t.color = 0xffff0000;
 		    add(t);
                     
+
+                    var t1:FlxText;
+                    t1 = new FlxText(50,140,200, "by David Renshaw");
+                    t1.alignment = "center";
+                    t1.color = 0xffff0000;
+		    add(t1);
 
                     _exit = new Door(19 * 16 + 8, 13 * 16);
                     add(_exit);
