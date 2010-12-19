@@ -8,6 +8,7 @@ package
 	[Embed(source="assets/jump.mp3")] private var SndJump:Class;
 	[Embed(source="assets/land.mp3")] private var SndLand:Class;
 	[Embed(source="assets/headhit.mp3")] private var SndHead:Class;
+	[Embed(source="assets/unlock.mp3")] private var SndUnlock:Class;
 	
 
         private var _onFloor: Boolean;
@@ -95,6 +96,11 @@ package
 	
 	override public function hitSide(Contact:FlxObject,Velocity:Number):void {         
             pickupKey(Contact);
+            if((Contact is Lock) && _hasKey){
+                FlxG.play(SndUnlock);
+                _hasKey = false;
+                Contact.exists = false;
+            }
             return super.hitSide(Contact,Velocity);
         }
 
