@@ -52,7 +52,7 @@ package
 
                     // scrolling?
 		    FlxG.follow(_student,2.5);
-		    FlxG.followAdjust(0.5,0.0);
+		    FlxG.followAdjust(0.5,0.5);
 		    FlxG.followBounds(0,0,20*16, 120*16);
 
 		    _objects = new FlxGroup();

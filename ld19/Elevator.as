@@ -29,7 +29,7 @@ package
 	override public function update():void
 	{
             if(y < _stopY){_goingUp = false; velocity.y = 0; fixed = true;}
-            if(_goingUp){velocity.y = -80;    }
+            if(_goingUp){velocity.y = -130;    }
             super.update();
 	}
 		
