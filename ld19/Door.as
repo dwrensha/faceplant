@@ -5,6 +5,7 @@ package
     public class Door extends FlxSprite
     {
 	[Embed(source="assets/door.png")] private var ImgDoor:Class;
+	[Embed(source="assets/door.mp3")] private var SndDoor:Class;
 
 	
 	public function Door(X:int,Y:int)
@@ -25,6 +26,12 @@ package
             super.update();
 	}
 		
+/*
+        public function enter():void
+        {
+            FlxG.play(SndDoor);
+        }
+*/
     
     }
 }

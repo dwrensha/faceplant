@@ -9,7 +9,8 @@ package
 		[Embed(source="assets/map.png")] private var ImgMap:Class;
 		[Embed(source="assets/background.png")] private var ImgBackground:Class;
 
-
+	        [Embed(source="assets/door.mp3")] private var SndDoor:Class;
+                    
 		protected var _objects:FlxGroup;
 		protected var _student:Student;
                 protected var _exit:Door;
@@ -22,6 +23,7 @@ package
 
 		override public function create():void
 		{
+
 
                     FlxState.bgColor = 0xffaabbdd;
                      
@@ -70,6 +72,9 @@ package
 
 		    _objects = new FlxGroup();
                     _objects.add(_student);
+
+
+                    FlxG.play(SndDoor);
                     
                     return;
 
@@ -85,6 +90,7 @@ package
 
                     if(FlxG.keys.justPressed("UP")){
                         if(_student.overlaps(_exit)){
+//                            _exit.enter();
                             FlxG.state = new PlayState1();
                         }
  

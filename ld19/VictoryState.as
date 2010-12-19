@@ -8,14 +8,17 @@ package
 		[Embed(source="assets/victory.mp3")] private var SndVictory:Class;
                 [Embed(source="assets/victorytiles.png")] private var ImgTiles:Class;
 		[Embed(source="assets/victorymap.png")] private var ImgMap:Class;
-
+	        [Embed(source="assets/door.mp3")] private var SndDoor:Class;
 
                 protected var _objects:FlxGroup;
 		protected var _student:Student;
                 protected var _entrance: Door;
+                protected var _exit: Door;
+
 
 		override public function create():void
 		{
+
 
                     FlxState.bgColor = 0xff708090;
 
@@ -36,6 +39,9 @@ package
                     _entrance = new Door(17 * 16 , 117 * 16);
                     add(_entrance);
 
+                    _exit = new Door(18 * 16 , 2 * 16);
+                    add(_exit);
+
                     var e : Elevator;
                     e = new Elevator(1 * 16, 117 * 16 + 8, 48);
                     add(e);
@@ -53,6 +59,7 @@ package
                     _objects.add(_student);
 
                     FlxG.playMusic(SndVictory);
+                    FlxG.play(SndDoor);
                     return;
 
 
@@ -65,10 +72,12 @@ package
 
 	            collide();
 
-
-                    if(FlxG.keys.justPressed("R")){
-                        FlxG.state = new PlayState();
-                    }
+                   if(FlxG.keys.justPressed("UP")){
+                        if(_student.overlaps(_exit)){
+                            FlxG.state = new MenuState();
+                        }
+ 
+                   }
                    
                     return;
 		}

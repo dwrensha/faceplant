@@ -10,6 +10,7 @@ package
 		[Embed(source="assets/background1.png")] private var ImgBackground:Class;
 		[Embed(source="assets/spooky.mp3")] private var SndSpooky:Class;
 
+	        [Embed(source="assets/door.mp3")] private var SndDoor:Class;
 
 		protected var _objects:FlxGroup;
 		protected var _student:Student;
@@ -21,6 +22,7 @@ package
 		override public function create():void
 		{
 
+
                     FlxState.bgColor = 0xff305040;
                      
                     var bg: FlxSprite;
@@ -30,6 +32,7 @@ package
                     add(bg);
 
                     FlxG.playMusic(SndSpooky);
+                    FlxG.play(SndDoor);
 
 		    var tiles:FlxTilemap = new FlxTilemap();
 		    tiles.auto = FlxTilemap.AUTO;
