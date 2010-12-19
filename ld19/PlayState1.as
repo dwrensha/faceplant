@@ -11,10 +11,10 @@ package
 		[Embed(source="assets/spooky.mp3")] private var SndSpooky:Class;
 
 
-
 		protected var _objects:FlxGroup;
 		protected var _student:Student;
                 protected var _exit:Door;
+                protected var _entrance:Door;
 
 		override public function create():void
 		{
@@ -44,6 +44,9 @@ package
 
                     _exit = new Door(76 * 16 + 8, 58 * 16);
                     add(_exit);
+
+                    _entrance = new Door(4 * 16 , 5 * 16);
+                    add(_entrance);
 
                     _student  = new Student(4 * 16, 5 * 16);
                     add(_student);

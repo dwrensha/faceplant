@@ -43,6 +43,10 @@ package
                     _exit = new Door(77 * 16, 58 * 16);
                     add(_exit);
 
+                    var k: Key;
+                    k = new Key(9 * 16, 5 * 16 + 8);
+                    add(k);
+
                     _student  = new Student(4 * 16, 5 * 16);
                     add(_student);
 
