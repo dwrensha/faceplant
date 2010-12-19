@@ -31,8 +31,8 @@ package
                     super.update();
 
                     if(FlxG.keys.justPressed("SPACE")){
-//                        FlxG.state = new PlayState();
-                        FlxG.state = new VictoryState();
+                        FlxG.state = new PlayState();
+//                        FlxG.state = new VictoryState();
                     }
                    
                     return;

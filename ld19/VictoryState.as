@@ -12,7 +12,7 @@ package
 
                 protected var _objects:FlxGroup;
 		protected var _student:Student;
-
+                protected var _entrance: Door;
 
 		override public function create():void
 		{
@@ -32,6 +32,14 @@ package
 		    t.alignment = "center";
 		    add(t);
                     
+
+                    _entrance = new Door(17 * 16 , 117 * 16);
+                    add(_entrance);
+
+                    var e : Elevator;
+                    e = new Elevator(1 * 16, 117 * 16 + 8, 48);
+                    add(e);
+
 
                     _student  = new Student(17 * 16, 117 * 16);
                     add(_student);
