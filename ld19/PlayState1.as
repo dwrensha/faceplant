@@ -122,10 +122,54 @@ package
                     b = new BakedGoods(4*16, 24 * 16 + 8);
                     add(b);
 
+                    b = new BakedGoods(38*16, 30 * 16 + 8);
+                    add(b);
+                    b = new BakedGoods(38*16 + 8, 30 * 16 + 8);
+                    add(b);
+
+                    b = new BakedGoods(78*16,  34 * 16 + 8);
+                    add(b);
+                    b = new BakedGoods(78*16 + 8, 34 * 16 + 8);
+                    add(b);
+
+                    b = new BakedGoods(66*16, 20 * 16 + 8);
+                    add(b);
+
+                    b = new BakedGoods(23*16, 17 * 16 + 8);
+                    add(b);
+
+                    b = new BakedGoods(48*16, 3 * 16 + 8);
+                    add(b);
+                    b = new BakedGoods(48*16 + 8, 3 * 16 + 8);
+                    add(b);
+
+                    b = new BakedGoods(26*16, 3 * 16 + 8);
+                    add(b);
+                    b = new BakedGoods(26*16 + 8, 3 * 16 + 8);
+                    add(b);
+                    b = new BakedGoods(27*16, 3 * 16 + 8);
+                    add(b);
+                    b = new BakedGoods(27*16 + 8, 3 * 16 + 8);
+                    add(b);
+
+
                     var d : Dollars;
 
                     d = new Dollars(62*16, 31 * 16 + 8);
                     add(d);
+
+                    d = new Dollars(43*16, 3 * 16 + 8);
+                    add(d);
+
+                    var p : Publication;
+
+                    p = new Publication(61 * 16, 31 * 16 + 8);
+                    add(p);
+
+                    p = new Publication(33 * 16, 8 * 16 + 8);
+                    add(p);
+                    p = new Publication(33 * 16 + 8, 8 * 16 + 8);
+                    add(p);
 
 
 

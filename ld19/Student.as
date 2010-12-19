@@ -102,6 +102,7 @@ package
 
                 if (_cheatCount == 5){
                     pickupKey()
+                    FlxG.score = 0;
 
                 }
             }            

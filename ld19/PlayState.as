@@ -124,6 +124,15 @@ package
                     b = new BakedGoods(5*16, 11 * 16 + 8);
                     add(b);
 
+                    b = new BakedGoods(6*16, 26 * 16 + 8);
+                    add(b);
+
+                    b = new BakedGoods(6*16, 35 * 16 + 8);
+                    add(b);
+
+                    b = new BakedGoods(6*16 + 8, 35 * 16 + 8);
+                    add(b);
+
                     var d : Dollars;
 
                     d = new Dollars(5*16, 43 * 16 + 8);
@@ -141,6 +150,11 @@ package
 
                     d = new Dollars(52*16 + 8, 46 * 16 + 8);
                     add(d);
+
+                    var p : Publication;
+
+                    p = new Publication(50 * 16, 43 * 16 + 8);
+                    add(p);
 
 
                 }

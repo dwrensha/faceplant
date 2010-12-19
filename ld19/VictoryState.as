@@ -112,6 +112,16 @@ package
                     var b : BakedGoods;
                     b = new BakedGoods(6*16, 52 * 16 + 8);
                     add(b);
+                    b = new BakedGoods(6*16 +8 , 52 * 16 + 8);
+                    add(b);
+                    b = new BakedGoods(7*16 , 52 * 16 + 8);
+                    add(b);
+                    b = new BakedGoods(7*16 + 8 , 52 * 16 + 8);
+                    add(b);
+                    b = new BakedGoods(8*16 , 52 * 16 + 8);
+                    add(b);
+                    b = new BakedGoods(8*16 + 8 , 52 * 16 + 8);
+                    add(b);
 
                     var d : Dollars;
 
