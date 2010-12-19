@@ -14,12 +14,15 @@ package
                 protected var _objects:FlxGroup;
 		protected var _student:Student;
                 protected var _exit: Door;
+                protected var _score : FlxText;
 
 
 		override public function create():void
 		{
 
                     FlxState.bgColor = 0xff102010;
+
+                    FlxG.score = 0;
                      
                     var bg: FlxSprite;
                     bg = new FlxSprite();
@@ -35,6 +38,15 @@ package
 		    tiles.loadMap(FlxTilemap.imageToCSV(ImgMap,false,2),ImgTiles);
 		    tiles.follow();
 		    add(tiles);
+
+                    
+		    var ssf:FlxPoint = new FlxPoint(0,0);
+		    _score = new FlxText(0,0,FlxG.width);
+		    _score.color = 0xbbbbee;
+		    _score.size = 16;
+		    _score.alignment = "left";
+		    _score.scrollFactor = ssf;
+		    add(_score);
 
 
                     var t:FlxText;
@@ -60,6 +72,10 @@ package
                     var cat : Cat;
                     cat = new Cat(2*16, 13*16 + 8);
                     add(cat);
+
+                    var d : Dollars;
+                    d = new Dollars(7 * 16, 13 * 16 + 8);
+                    add(d);
 
                     // scrolling?
 		    FlxG.follow(_student,2.5);
@@ -92,6 +108,7 @@ package
                         }
  
                    }
+		   _score.text = FlxG.score.toString();
 
                      return;
 		}

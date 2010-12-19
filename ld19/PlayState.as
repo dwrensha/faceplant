@@ -18,7 +18,7 @@ package
                 protected var _key: Key;
                 protected var _lock: Lock;
 
-
+                protected var _score: FlxText;
 
 
 		override public function create():void
@@ -41,6 +41,16 @@ package
 		    tiles.loadMap(FlxTilemap.imageToCSV(ImgMap,false,2),ImgTiles);
 		    tiles.follow();
 		    add(tiles);
+
+		    var ssf:FlxPoint = new FlxPoint(0,0);
+		    _score = new FlxText(0,0,FlxG.width);
+		    _score.color = 0xff000000;
+		    _score.size = 16;
+		    _score.alignment = "left";
+		    _score.scrollFactor = ssf;
+		    add(_score);
+
+
 
                     var t:FlxText;
     
@@ -98,7 +108,7 @@ package
  
 
                    }
-
+		   _score.text = FlxG.score.toString();
                     
                     
                     return;

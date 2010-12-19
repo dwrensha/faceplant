@@ -69,16 +69,19 @@ package
 	    acceleration.x = 0;
 	    if(FlxG.keys.LEFT)
 	    {
+                _cheatCount = 0;
 		facing = LEFT;
 		acceleration.x -= drag.x;
 	    }
 	    else if(FlxG.keys.RIGHT)
 	    {
+                _cheatCount = 0;
 		facing = RIGHT;
 		acceleration.x += drag.x;
 	    }
 	    if(FlxG.keys.justPressed("SPACE") && _onFloor)
 	    {
+                _cheatCount = 0;
 		velocity.y = -_jumpPower;
 		FlxG.play(SndJump);
 
@@ -109,7 +112,7 @@ package
 		
 	override public function hitBottom(Contact:FlxObject,Velocity:Number):void
 	{
-            pickupIfKey(Contact);
+            pickup(Contact);
             if(velocity.y > 50)
 	    FlxG.play(SndLand);
 	    _onFloor = true;
@@ -117,7 +120,7 @@ package
 	}
 	
 	override public function hitSide(Contact:FlxObject,Velocity:Number):void {         
-            pickupIfKey(Contact);
+            pickup(Contact);
             if((Contact is Lock) && _hasKey){
                 FlxG.play(SndUnlock);
                 _hasKey = false;
@@ -130,15 +133,23 @@ package
         {     
 
 	    FlxG.play(SndHead);
-            pickupIfKey(Contact); 
+            pickup(Contact); 
             return super.hitTop(Contact,Velocity);
         }
 
 	
-        public function pickupIfKey(Contact:FlxObject):void
+        public function pickup(Contact:FlxObject):void
         {
             if(Contact is Key){
                 pickupKey()
+            }
+
+            if(Contact is Item){
+                var itm : Item;
+                itm = Contact as Item;
+                itm.pickup();
+                FlxG.score = FlxG.score + itm.value;
+                // increment score.
             }
         }
 
