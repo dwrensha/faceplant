@@ -47,6 +47,10 @@ package
                     k = new Key(9 * 16, 5 * 16 + 8);
                     add(k);
 
+                    var lock: Lock;
+                    lock = new Lock(72 * 16, 58 * 16 );
+                    add(lock);
+
                     _student  = new Student(4 * 16, 5 * 16);
                     add(_student);
 

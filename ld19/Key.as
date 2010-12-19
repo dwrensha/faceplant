@@ -5,6 +5,7 @@ package
     public class Key extends FlxSprite
     {
 	[Embed(source="assets/key.png")] private var ImgKey:Class;
+	[Embed(source="assets/coin.mp3")] private var SndKey:Class;
 
 	
 	public function Key(X:int,Y:int)
@@ -15,7 +16,7 @@ package
             width = 8;
             height = 8;
 
-            solid = false;
+            solid = true;
 
 	}
 		
