@@ -160,6 +160,10 @@ package
                     pipe = new Pipe(26 * 16 + 8,54 * 16);
                     add(pipe)
 
+                    var wires : Wires;
+                    wires = new Wires(51 * 16 ,52 * 16);
+                    add(wires);
+
 
                 }
 	}
