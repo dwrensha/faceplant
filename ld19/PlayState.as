@@ -156,6 +156,10 @@ package
                     p = new Publication(50 * 16, 43 * 16 + 8);
                     add(p);
 
+                    var pipe : Pipe;
+                    pipe = new Pipe(26 * 16 + 8,54 * 16);
+                    add(pipe)
+
 
                 }
 	}

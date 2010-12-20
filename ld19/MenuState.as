@@ -10,11 +10,13 @@ package
 		[Embed(source="assets/menumap.png")] private var ImgMap:Class;
 
 		[Embed(source="assets/starrysky.png")] private var ImgBackground:Class;
+	        [Embed(source="assets/drop.png")] private var ImgDrop:Class;
 
                 protected var _objects:FlxGroup;
 		protected var _student:Student;
                 protected var _exit: Door;
                 protected var _score : FlxText;
+
 
 
 		override public function create():void
@@ -76,6 +78,8 @@ package
                     var b : BakedGoods;
                     b = new BakedGoods(1 * 16, 13 * 16 + 8);
                     add(b);
+
+
 
                     // scrolling?
 		    FlxG.follow(_student,2.5);
