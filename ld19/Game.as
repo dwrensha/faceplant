@@ -11,6 +11,7 @@ package {
 		public function Game():void
 		{
 			super(320,240,LogoState);
+                        pause = new Pause();
 			FlxState.bgColor = 0xff010100;
 			useDefaultHotKeys = true;
 		}
