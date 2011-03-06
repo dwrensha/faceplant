@@ -9,6 +9,8 @@ package
  
     public class B2FlxSprite extends FlxSprite
     {
+
+        // pixels per meter?
         private var ratio:Number = 30;
  
         public var _fixDef:b2FixtureDef;
@@ -18,7 +20,7 @@ package
         private var _world:b2World;
  
         //Physics params default value
-        public var _friction:Number = 0.8;
+        public var _friction:Number = 0.0;
         public var _restitution:Number = 0.3;
         public var _density:Number = 0.7;
  
@@ -62,6 +64,7 @@ package
             _bodyDef.position.Set((x + (width/2)) / ratio, (y + (height/2)) / ratio);
             _bodyDef.angle = _angle * (Math.PI / 180);
             _bodyDef.type = _type;
+ 
  
             _obj = _world.CreateBody(_bodyDef);
             _obj.CreateFixture(_fixDef);

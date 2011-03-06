@@ -2,28 +2,27 @@ package
 {
 	import org.flixel.*;
 
+        import Box2D.Dynamics.*;
+        import Box2D.Collision.*;
+        import Box2D.Collision.Shapes.*;
+        import Box2D.Common.Math.*;
+
 	public class PlayState extends FlxState
 	{
                     
 		protected var _objects:FlxGroup;
 		protected var _dude:Dude;
 
+                
+                protected var _world : b2World;
 
 		override public function create():void
 		{
 
+                    var gravity:b2Vec2 = new b2Vec2(0, 0.0);
+                    _world = new b2World(gravity, true);
 
-                    FlxState.bgColor = 0xffaabbdd;
-/*                     
-                    var bg: FlxSprite;
-                    bg = new FlxSprite();
-                    bg.loadGraphic(ImgBackground);
-                    bg.scale = new FlxPoint(6,6);
-                    bg.solid = false;
-                    bg.fixed = true;
-                    add(bg);
-                    
-*/
+                    FlxState.bgColor = 0xffaabbaa;
 
 
                     var t:FlxText;
@@ -33,7 +32,7 @@ package
 		    add(t);
                     
 
-                    _dude  = new Dude(4 * 16, 5 * 16);
+                    _dude  = new Dude(4 * 16, 5 * 16, _world);
                     add(_dude);
 
 
@@ -55,9 +54,13 @@ package
 		override public function update():void
 		{
 
+                    _world.Step(FlxG.elapsed,10,10);
+
                     super.update();
 
-	            collide();
+                    
+
+
                 }
 
 
