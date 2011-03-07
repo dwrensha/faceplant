@@ -7,7 +7,7 @@ package
     import Box2D.Collision.Shapes.*;
     import Box2D.Common.Math.*;
  
-    public class B2FlxSprite extends FlxSprite
+    public class B2FlxText extends FlxText
     {
 
         // pixels per meter?
@@ -20,7 +20,7 @@ package
         private var _world:b2World;
  
         //Physics params default value
-        public var _friction:Number = 0.0;
+        public var _friction:Number = 0.2;
         public var _restitution:Number = 0.3;
         public var _density:Number = 0.7;
  
@@ -32,13 +32,16 @@ package
 
  
  
-        public function B2FlxSprite(X:Number, Y:Number, Width:Number, Height:Number, w:b2World):void
+        public function B2FlxText(
+            X:Number, 
+            Y:Number, 
+            t : String,
+            w:b2World):void
         {
-            super(X,Y);
- 
-            width = Width;
-            height = Height;
-            _world = w;
+            super(X,Y,t.length * 8,t);
+             _world = w;
+             createBody();
+             _obj.SetLinearDamping(0.2);
         }
  
         override public function update():void
@@ -64,7 +67,7 @@ package
             _bodyDef.position.Set((x + (width/2)) / ratio, (y + (height/2)) / ratio);
             _bodyDef.angle = _angle * (Math.PI / 180);
             _bodyDef.type = _type;
- 
+            _bodyDef.fixedRotation = true;
  
             _obj = _world.CreateBody(_bodyDef);
             _obj.CreateFixture(_fixDef);

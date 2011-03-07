@@ -20,13 +20,15 @@ package
 	{
 	    super(X,Y, width, height, w);
 	    loadGraphic(ImgDude,true,true,width,height);
-            
+            antialiasing = true;
+
             width = 16;
             height = 16;
 
             createBody();
 
             _obj.SetAngularDamping(0.1);
+            _obj.SetLinearDamping(0.5);
 
 	}
 
@@ -43,7 +45,15 @@ package
 
             var omega : Number = 0.0;
             var v : b2Vec2 = _obj.GetLinearVelocity();
-            var theta : Number = _obj.GetAngle() - Math.PI / 2.0;
+            var theta : Number = _obj.GetAngle();
+
+
+            var vmag: Number = v.Length();
+            var xv: Number = Math.cos(theta) * vmag;
+            var yv: Number = Math.sin(theta) * vmag;
+            
+            _obj.SetLinearVelocity(new b2Vec2(xv,yv));
+
 
 	    if(FlxG.keys.LEFT)
 	    {
@@ -62,10 +72,10 @@ package
                 var xf: Number = Math.cos(theta) ;
                 var yf: Number = Math.sin(theta);
 
-                FlxG.log(xf + ", "  + yf);
                 _obj.ApplyImpulse(new b2Vec2(xf, yf  ),  _obj.GetPosition())
 
 	    }
+
 
 
 
