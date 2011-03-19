@@ -27,7 +27,7 @@ package
 
             createBody();
 
-            _obj.SetAngularDamping(0.1);
+            _obj.SetAngularDamping(0.5);
             _obj.SetLinearDamping(0.5);
 
 	}
@@ -43,10 +43,11 @@ package
 
 
 
-            var omega : Number = 0.0;
+            var omega : Number = _obj.GetAngularVelocity();
             var v : b2Vec2 = _obj.GetLinearVelocity();
             var theta : Number = _obj.GetAngle();
 
+            var omegamax:Number = 5.0;
 
             var vmag: Number = v.Length();
             var xv: Number = Math.cos(theta) * vmag;
@@ -55,17 +56,32 @@ package
             _obj.SetLinearVelocity(new b2Vec2(xv,yv));
 
 
+
 	    if(FlxG.keys.LEFT)
 	    {
                 _obj.SetAwake(true);
-                omega = -1.5;
-
+                omega-= 0.5;
 	    }
 	    else if(FlxG.keys.RIGHT)
 	    {
                 _obj.SetAwake(true);
-                omega = 1.5;
+                omega+= 0.5;
+
+
 	    }
+
+ 
+            if(omega <= -omegamax) {
+                omega = -omegamax;
+            }
+            else if(omega >= omegamax) {
+                omega = omegamax;
+            }                
+
+
+                
+            
+
 	    if(FlxG.keys.justPressed("SPACE"))
 	    {
                 
